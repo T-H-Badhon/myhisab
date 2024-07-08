@@ -3,6 +3,7 @@
 
 import Transaction from "@/models/Transaction";
 import connectMongo from "@/utils/connectMongo";
+import Link from "next/link";
 
 const AllTransaction = async () => {
   await connectMongo();
@@ -10,7 +11,12 @@ const AllTransaction = async () => {
 
   return (
     <div className="mx-10">
-      <h1 className="my-20 text-center">All transactions:</h1>
+      <div className="mx-10 my-10 flex justify-between">
+        <h1 className=" text-center">All transactions:</h1>
+        <Link className="py-2 px-3 bg-slate-700 text-white" href={"/"}>
+          Add
+        </Link>
+      </div>
       {transactions.length > 0 ? (
         transactions.map((transaction) => (
           <div className="flex justify-between items-center">
