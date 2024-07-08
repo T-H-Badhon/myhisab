@@ -18,7 +18,10 @@ const AllTransaction = async () => {
       </div>
       {transactions.length > 0 ? (
         transactions.map((transaction) => (
-          <div className="flex justify-between items-center">
+          <div
+            key={transaction.reason + transaction.amount}
+            className="flex justify-between items-center"
+          >
             <h1>{transaction.reason}:</h1>
             <h1>{transaction.amount}</h1>
           </div>
