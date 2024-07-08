@@ -8,6 +8,7 @@ const EntryField = () => {
     const reason = e?.target.reason.value;
     const amount = Number(e.target.amount.value);
     addFunction(reason, amount);
+    e.reset();
   };
   return (
     <div className="mx-5">

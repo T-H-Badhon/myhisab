@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const AllTransaction = async () => {
   await connectMongo();
-  const transactions = await Transaction.find({}).lean();
+  const transactions = await Transaction.find({});
 
   return (
     <div className="mx-10">
