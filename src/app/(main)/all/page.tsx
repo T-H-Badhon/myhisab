@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-key */
-"use server";
 
 import Transaction from "@/models/Transaction";
 import connectMongo from "@/utils/connectMongo";
