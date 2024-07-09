@@ -17,15 +17,17 @@ const AllTransaction = async () => {
         </Link>
       </div>
       {transactions.length > 0 ? (
-        transactions.map((transaction) => (
-          <div
-            key={transaction.reason + transaction.amount}
-            className="flex justify-between items-center"
-          >
-            <h1>{transaction.reason}:</h1>
-            <h1>{transaction.amount}</h1>
-          </div>
-        ))
+        <div className="divide-y">
+          {transactions.map((transaction) => (
+            <div
+              key={transaction.reason + transaction.amount}
+              className="flex justify-between items-center py-2"
+            >
+              <h1>{transaction.reason}:</h1>
+              <h1>{transaction.amount}</h1>
+            </div>
+          ))}
+        </div>
       ) : (
         <h1 className="text-center my-5">nothing to show</h1>
       )}
