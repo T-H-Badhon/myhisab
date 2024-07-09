@@ -11,7 +11,7 @@ const EntryField = () => {
     const amount = Number(e.target.amount.value);
     addFunction(reason, amount);
     e.reset();
-    router.push("/dashboard/all");
+    router.push("/all");
   };
   return (
     <div className="mx-5">
