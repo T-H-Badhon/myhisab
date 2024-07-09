@@ -1,14 +1,17 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { addFunction } from "./addFunction";
 
 const EntryField = () => {
+  const router = useRouter();
   const onSubmit = (e: any) => {
     e.preventDefault();
     const reason = e?.target.reason.value;
     const amount = Number(e.target.amount.value);
     addFunction(reason, amount);
     e.reset();
+    router.push("/dashboard/all");
   };
   return (
     <div className="mx-5">
